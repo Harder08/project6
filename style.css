@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: hsl(360deg 99% 50%);
+    font-weight: bold;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+span:hover::after {
+    filter: opacity(100%);
+}
+
+span:hover::before {
+    filter: opacity(100%);
+
+}
+
+span::after {
+    position: absolute;
+    content: "This Is Tooltip Content";
+    background-color: black;
+    padding: 20px;
+    color: white;
+    top: -70px;
+    width: max-content;
+    filter: opacity(0);
+    transition: all 0.3s;
+}
+
+span::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px;
+    border-color: black transparent transparent transparent;
+    background-color: transparent;
+    top: -12px;
+    filter: opacity(0);
+    transition: all 0.3s;
+}
